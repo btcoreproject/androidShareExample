@@ -1,0 +1,58 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:layout_editor_absoluteY="81dp"
+    tools:showIn="@layout/activity_main">
+
+    <ViewAnimator
+        android:id="@+id/sample_output"
+        android:layout_width="match_parent"
+        android:layout_height="246dp"
+        app:layout_constraintBottom_toTopOf="@+id/sample_content_fragment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ScrollView
+            style="@style/Widget.SampleMessageTile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                style="@style/Widget.SampleMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/vertical_page_margin"
+                android:paddingLeft="@dimen/horizontal_page_margin"
+                android:paddingRight="@dimen/horizontal_page_margin"
+                android:paddingTop="@dimen/vertical_page_margin"
+                android:text="@string/intro_message" />
+        </ScrollView>
+
+        <fragment
+            android:id="@+id/log_fragment"
+            android:name="btcore.co.kr.d2band.common.logger.LogFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+    </ViewAnimator>
+
+    <FrameLayout
+        android:id="@+id/sample_content_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="259dp"
+        android:animateLayoutChanges="false"
+        android:clipToPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewAnimator">
+
+    </FrameLayout>
+
+</android.support.constraint.ConstraintLayout>
